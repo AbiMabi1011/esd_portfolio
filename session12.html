@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Week 12 - Professional Skills - Abishanan Pathmarajah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #f59e0b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      scroll-behavior: smooth;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 25px 35px -5px rgba(99, 102, 241, 0.25), 0 15px 15px -5px rgba(99, 102, 241, 0.15);
+      z-index: 10;
+    }
+
+    /* Background orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: pulseOrb 6s ease-in-out infinite;
+    }
+
+    .bg-orb-indigo {
+      background: #6366f1;
+      width: 320px;
+      height: 320px;
+      top: 15vh;
+      left: 20vw;
+    }
+
+    .bg-orb-amber {
+      background: #f59e0b;
+      width: 400px;
+      height: 400px;
+      bottom: 15vh;
+      right: 20vw;
+      animation-delay: 2s;
+    }
+
+    @keyframes pulseOrb {
+
+      0%,
+      100% {
+        opacity: .15;
+        transform: translateY(0)
+      }
+
+      50% {
+        opacity: .25;
+        transform: translateY(-20px)
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gradient-to-b from-indigo-50 via-white to-amber-50 min-h-screen relative">
+  <!-- Animated Background Orbs -->
+  <div aria-hidden="true">
+    <div class="bg-orb bg-orb-indigo"></div>
+    <div class="bg-orb bg-orb-amber"></div>
+  </div>
+
+  <!-- ===== TOP NAVBAR (non-sticky) ===== -->
+  <header class="bg-white/90 backdrop-blur-md shadow-sm border-b border-indigo-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-4">
+          <img src="abi.JPG" alt="Abishanan Pathmarajah"
+               class="rounded-full w-12 h-12 object-cover border-4 border-indigo-300 shadow-lg" />
+          <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight select-none">
+            Abishanan <span class="text-indigo-600">Pathmarajah</span>
+          </h1>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="esd_index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> Back to Skills
+        </a>
+        <a href="index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-house mr-2"></i> Home
+        </a>
+        <a href="resume/Abishanan_Pathmarajah_Resume.pdf" download
+           class="inline-flex items-center h-11 px-5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500
+                  text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus:ring-4 focus:ring-indigo-400">
+          <i class="fas fa-download mr-2"></i> Download Résumé
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <nav class="mb-8">
+      <ol class="flex items-center space-x-2 text-sm text-slate-600">
+        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li><a href="esd_index.html" class="hover:text-indigo-600">ESD</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li class="text-indigo-600">Week 12 - Dining and Grooming Etiquette</li>
+      </ol>
+    </nav>
+
+    <header class="text-center mb-16">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-indigo-100 rounded-full mb-6">
+        <i class="fa-solid fa-1 text-3xl text-indigo-600"></i>
+        <i class="fa-solid fa-2 text-3xl text-indigo-600 ml-[-10px]"></i>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+        Week <span class="gradient-text">12</span>: Dining and Grooming Etiquette
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
+        Understanding dining etiquette and personal grooming standards for professional settings
+      </p>
+    </header>
+
+    <div class="bg-white rounded-2xl shadow-lg p-4 max-w-6xl mx-auto">
+      <h2 class="text-xl font-bold text-slate-900 mb-3">1. Lesson Overview</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        This lesson focused on understanding dining etiquette and personal grooming standards for professional settings.
+        These aspects of professional presentation significantly impact first impressions and ongoing workplace relationships.
+      </p>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Students learned about formal dining protocols, personal appearance standards, and how to present themselves confidently in various professional contexts.
+      </p>
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">2. Lesson Objectives</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        By the end of this lesson, you should be able to:
+      </p>
+      
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Demonstrate proper dining etiquette in formal and business settings.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Maintain appropriate personal grooming and appearance standards.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Navigate different cultural dining customs and expectations.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Handle dining and grooming challenges with confidence and grace.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Understand the connection between appearance and professional credibility.</span>
+        </li>
+      </ul>
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">3. Importance of Dining and Grooming Etiquette</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Professional presentation through dining etiquette and grooming significantly impacts career success:
+      </p>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">First impressions are formed within seconds and heavily influenced by appearance and behavior.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Professional dining situations are common for networking, client meetings, and career advancement.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Personal grooming reflects attention to detail and respect for others.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Etiquette varies across cultures and industries, requiring adaptability and awareness.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="key-point p-2 my-3">
+        <p class="text-slate-700 italic text-sm">
+          <i class="fa-solid fa-thumbtack text-amber-500 mr-1 text-xs"></i>
+          <strong>Your appearance and dining behavior communicate your professionalism before you speak.</strong>
+        </p>
+      </div>
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">4. Personal Grooming Standards</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Maintaining professional appearance through proper grooming:
+      </p>
+      
+      <div class="overflow-x-auto">
+        <table class="text-sm">
+          <thead>
+            <tr>
+              <th class="px-2 py-1">Aspect</th>
+              <th class="px-2 py-1">Guidelines</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-2 py-1">Hair</td>
+              <td class="px-2 py-1">Clean, well-groomed, and styled appropriately for your industry and workplace culture.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Nails</td>
+              <td class="px-2 py-1">Clean, trimmed, and if polished, in neutral or conservative colors.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Fragrance</td>
+              <td class="px-2 py-1">Subtle or none at all to accommodate allergies and cultural preferences.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Clothing</td>
+              <td class="px-2 py-1">Clean, pressed, and appropriate for the workplace and occasion.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Hygiene</td>
+              <td class="px-2 py-1">Fresh breath, deodorant, and overall cleanliness are non-negotiable.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">5. Business Dining Etiquette</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Navigating formal dining situations with confidence and grace:
+      </p>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-utensils text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Table Setting Basics:</strong> Familiarize yourself with utensil placement and napkin positioning before sitting.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-hands-helping text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Seating Protocol:</strong> Wait to be seated and follow the host's lead on when to begin eating.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-comments text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Conversation:</strong> Focus on engaging topics, avoid controversial subjects, and include all guests.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-wine-glass text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Drinking Etiquette:</strong> Limit alcohol consumption and never drink and drive.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h3 class="text-lg font-bold text-slate-900 mb-2 mt-4">Dining Do's and Don'ts:</h3>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-check-circle text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Do:</strong> Chew with mouth closed, use utensils properly, excuse yourself politely.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-times-circle text-red-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Don't:</strong> Talk with food in mouth, reach across the table, use phone at table.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">6. Cultural Considerations</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Adapting etiquette to different cultural contexts:
+      </p>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-globe-americas text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Research Customs:</strong> Learn about dining and grooming expectations before international business interactions.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-handshake text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Observe and Adapt:</strong> Follow the lead of local colleagues and ask respectful questions.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-heart text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Show Respect:</strong> Demonstrate appreciation for different cultural practices and traditions.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">7. Handling Challenging Situations</h2>
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Maintaining composure during unexpected circumstances:
+      </p>
+      
+      <div class="overflow-x-auto">
+        <table class="text-sm">
+          <thead>
+            <tr>
+              <th class="px-2 py-1">Situation</th>
+              <th class="px-2 py-1">Professional Response</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-2 py-1">Spilling Food/Drink</td>
+              <td class="px-2 py-1">Apologize briefly, clean up calmly, and continue with grace.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Unfamiliar Foods</td>
+              <td class="px-2 py-1">Try new items with enthusiasm and ask questions politely.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Grooming Emergencies</td>
+              <td class="px-2 py-1">Address issues discreetly and seek help if needed.</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-1">Cultural Missteps</td>
+              <td class="px-2 py-1">Apologize sincerely and learn from the experience.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">8. Key Takeaways</h2>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Dining and grooming etiquette significantly impact professional credibility and relationships.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Proper grooming reflects attention to detail and respect for others.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Cultural awareness is essential in our global business environment.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Confidence in handling unexpected situations demonstrates professionalism.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">9. My Learning Reflection</h2>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Through this lesson, I learned that dining and grooming etiquette are essential components of professional presentation.
+        I now understand how important it is to adapt my behavior to different cultural and business contexts.
+      </p>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        I learned about proper grooming standards and dining protocols that contribute to positive first impressions.
+        This knowledge helped me realize the impact that attention to appearance and behavior can have on career advancement.
+      </p>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        I also practiced handling challenging situations with grace and learned how to show respect for different cultural practices—this enhanced my confidence in professional social settings.
+      </p>
+      
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">10. My Personal Statement</h2>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        Developing my dining and grooming etiquette skills has taught me the value of attention to detail and cultural sensitivity.
+        I see these skills as essential tools for building professional relationships and representing my organization positively.
+      </p>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        My goal is to continue refining my professional presentation by:
+      </p>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Staying informed about cultural practices in my industry and geographic areas.</span>
+        </div>
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Seeking feedback on my professional appearance and dining behavior.</span>
+        </div>
+        <div class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Observing and learning from respected professionals in formal settings.</span>
+        </div>
+      </div>
+      
+      <p class="text-slate-700 mb-3 text-sm leading-relaxed">
+        I am committed to using these etiquette skills to present myself confidently and respectfully in all professional situations.
+      </p>
+      
+      <div class="section-divider"></div>
+
+      <div class="section-divider"></div>
+      
+      <h2 class="text-xl font-bold text-slate-900 mb-3">11. Professional Development Plan</h2>
+      
+      <div class="border border-indigo-200 rounded-xl p-4 hover:bg-indigo-50 transition">
+        <div class="flex items-center">
+          <i class="fa-solid fa-user-tie text-indigo-500 text-xl mr-3"></i>
+          <div>
+            <h3 class="font-bold text-slate-900">Create Your Etiquette Development Plan</h3>
+            <p class="text-slate-600 text-sm">Identify areas for improvement and set goals for professional presentation.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section-divider"></div>
+      
+      <h2 class="text-xl font-bold text-slate-900 mb-3">12. Resources for Continued Learning</h2>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-book text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Post, E. (2019). Emily Post's Etiquette: The Standard Guide to Manners and Civility.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-book text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm">Fox, A. (2020). Business Dining: The Complete Guide to Professional Table Manners.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section-divider"></div>
+      
+      <h2 class="text-xl font-bold text-slate-900 mb-3">13. Practical Exercises</h2>
+      
+      <div class="space-y-3">
+        <div class="flex items-start">
+          <i class="fa-solid fa-dumbbell text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Etiquette Self-Assessment:</strong> Evaluate your current grooming and dining habits against professional standards.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-dumbbell text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Cultural Research:</strong> Study dining customs in countries relevant to your business interests.</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <i class="fa-solid fa-dumbbell text-indigo-500 mt-1 mr-2 text-sm"></i>
+          <div>
+            <p class="text-slate-700 text-sm"><strong>Practice Scenarios:</strong> Role-play challenging dining situations with friends or mentors.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section-divider"></div>
+      
+      <h2 class="text-xl font-bold text-slate-900 mb-3">14. Assessment Checklist</h2>
+      
+      <div class="border border-indigo-200 rounded-xl p-4 hover:bg-indigo-50 transition">
+        <div class="flex items-center">
+          <i class="fa-solid fa-clipboard-list text-indigo-500 text-xl mr-3"></i>
+          <div>
+            <h3 class="font-bold text-slate-900">Etiquette Assessment Checklist</h3>
+            <p class="text-slate-600 text-sm">Evaluate your etiquette skills using this comprehensive checklist.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <div class="max-w-6xl mx-auto mt-8 scroll-fade">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Learning Resources</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="./images/week12 (1).jpeg" alt="Dining Etiquette Workshop" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <h3 class="font-bold text-white text-lg">Dining Workshop</h3>
+              <p class="text-indigo-200 text-sm">Interactive learning session</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="./images/week12 (3).jpeg" alt="Professional Grooming" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <h3 class="font-bold text-white text-lg">Professional Grooming</h3>
+              <p class="text-indigo-200 text-sm">Appearance standards</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="./images/week12 (4).jpeg" alt="Cultural Dining" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <h3 class="font-bold text-white text-lg">Cultural Dining</h3>
+              <p class="text-indigo-200 text-sm">Global business practices</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <img src="abi.JPG" alt="Abishanan" class="rounded-full w-12 h-12 object-cover border-4 border-indigo-600 shadow-lg" />
+        <div>
+          <h2 class="text-white font-extrabold">Abishanan Pathmarajah</h2>
+          <p class="text-indigo-400 text-sm">Software Engineer | Full-Stack Developer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-5 text-2xl">
+        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400"><i class="fab fa-github"></i></a>
+        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

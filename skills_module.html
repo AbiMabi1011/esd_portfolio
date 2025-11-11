@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Professional Skills Module - Abishanan Pathmarajah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #f59e0b;
+      --accent: #10b981;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      scroll-behavior: smooth;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 25px 35px -5px rgba(99, 102, 241, 0.25), 0 15px 15px -5px rgba(99, 102, 241, 0.15);
+      z-index: 10;
+    }
+
+    .skill-card {
+      transition: all 0.3s ease;
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #ffffff, #f1f5f9);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.15);
+    }
+
+    .progress-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    /* Background orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: pulseOrb 6s ease-in-out infinite;
+    }
+
+    .bg-orb-indigo {
+      background: #6366f1;
+      width: 320px;
+      height: 320px;
+      top: 15vh;
+      left: 20vw;
+    }
+
+    .bg-orb-amber {
+      background: #f59e0b;
+      width: 400px;
+      height: 400px;
+      bottom: 15vh;
+      right: 20vw;
+      animation-delay: 2s;
+    }
+
+    @keyframes pulseOrb {
+
+      0%,
+      100% {
+        opacity: .15;
+        transform: translateY(0)
+      }
+
+      50% {
+        opacity: .25;
+        transform: translateY(-20px)
+      }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      color: white;
+    }
+
+    .stats-card {
+      background: linear-gradient(135deg, #f0f4ff, #fefaf0);
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -38px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 4px solid white;
+      box-shadow: 0 0 0 5px var(--primary);
+    }
+
+    .timeline-item:hover::before {
+      background: var(--secondary);
+      box-shadow: 0 0 0 5px var(--secondary);
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    .learning-objective-card {
+      transition: all 0.3s ease;
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #ffffff, #f1f5f9);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    .learning-objective-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.15);
+    }
+
+    .lo-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--accent), #059669);
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gradient-to-b from-indigo-50 via-white to-amber-50 min-h-screen relative">
+  <!-- Animated Background Orbs -->
+  <div aria-hidden="true">
+    <div class="bg-orb bg-orb-indigo"></div>
+    <div class="bg-orb bg-orb-amber"></div>
+  </div>
+
+  <!-- ===== TOP NAVBAR (non-sticky) ===== -->
+  <header class="bg-white/90 backdrop-blur-md shadow-sm border-b border-indigo-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-4">
+          <img src="abi.JPG" alt="Abishanan Pathmarajah"
+               class="rounded-full w-12 h-12 object-cover border-4 border-indigo-300 shadow-lg" />
+          <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight select-none">
+            Abishanan <span class="text-indigo-600">Pathmarajah</span>
+          </h1>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-house mr-2"></i> Home
+        </a>
+        <a href="resume/Abishanan_Pathmarajah_Resume.pdf" download
+           class="inline-flex items-center h-11 px-5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500
+                  text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus:ring-4 focus:ring-indigo-400">
+          <i class="fas fa-download mr-2"></i> Download Résumé
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <nav class="mb-8">
+      <ol class="flex items-center space-x-2 text-sm text-slate-600">
+        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li><a href="esd_index.html" class="hover:text-indigo-600">ESD</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li class="text-indigo-600">Skills Module Outline</li>
+      </ol>
+    </nav>
+
+    <header class="text-center mb-16">
+      <div class="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-2xl mb-6 shadow-lg">
+        <i class="fa-solid fa-graduation-cap text-4xl text-white"></i>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+        Professional Skills <span class="gradient-text">Module Outline</span>
+      </h1>
+      <p class="text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed">
+        A comprehensive 12-week professional skills development program covering essential competencies for workplace success.
+      </p>
+    </header>
+
+    <!-- Stats Overview -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+      <div class="stats-card p-6 text-center">
+        <div class="text-3xl font-bold text-indigo-600 mb-2">12</div>
+        <div class="text-slate-700 font-medium">Learning Objectives</div>
+      </div>
+      <div class="stats-card p-6 text-center">
+        <div class="text-3xl font-bold text-amber-600 mb-2">10+</div>
+        <div class="text-slate-700 font-medium">Core Competencies</div>
+      </div>
+      <div class="stats-card p-6 text-center">
+        <div class="text-3xl font-bold text-emerald-600 mb-2">5</div>
+        <div class="text-slate-700 font-medium">Assessment Types</div>
+      </div>
+      <div class="stats-card p-6 text-center">
+        <div class="text-3xl font-bold text-rose-600 mb-2">100%</div>
+        <div class="text-slate-700 font-medium">Practical Skills</div>
+      </div>
+    </div>
+
+    <!-- Learning Objectives Timeline -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 mb-10 text-center">Learning Objectives Timeline</h2>
+      <div class="max-w-3xl mx-auto relative timeline pl-20">
+        <!-- LO1 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-indigo-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Introduction to Professional Skills</h3>
+              <span class="lo-badge">LO1</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+                <span>Define employability skills</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+                <span>Identify skills necessary for employment</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+                <span>Classify workplace skills</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+                <span>Understand values, beliefs, attitudes, and character</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO2 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-amber-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">CV Writing and Cover Letters</h3>
+              <span class="lo-badge bg-gradient-to-r from-amber-500 to-amber-600">LO2</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Identify the structure of a CV and cover letter</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Recognize appropriate registers in cover letter writing</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Distinguish between CV and résumé</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Write a cover letter in response to a job advertisement</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Compose a professional CV</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO3 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-emerald-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Interview Skills</h3>
+              <span class="lo-badge bg-gradient-to-r from-emerald-500 to-emerald-600">LO3</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-sm"></i>
+                <span>Identify the basic components of interviews</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-sm"></i>
+                <span>Demonstrate effective interview skills</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-sm"></i>
+                <span>Conduct mock interviews</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO4 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-rose-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Negotiation Skills</h3>
+              <span class="lo-badge bg-gradient-to-r from-rose-500 to-rose-600">LO4</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 mr-2 text-sm"></i>
+                <span>Examine different types of negotiation skills</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 mr-2 text-sm"></i>
+                <span>Understand the importance of negotiation skills for professional development</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO5 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-indigo-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Introduction to Portfolio Writing</h3>
+              <span class="lo-badge">LO5</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+                <span>Classify different types of portfolios</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+                <span>Write a self-reflective portfolio</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+                <span>Create a professional portfolio (Assignment)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO6 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-amber-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Team Leadership Skills</h3>
+              <span class="lo-badge bg-gradient-to-r from-amber-500 to-amber-600">LO6</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Understand team development stages</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Apply team leadership strategies</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Problem-solving and decision-making</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Embrace diversity in teams, organizations, and society</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO7 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-emerald-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Facilitating and Conducting Meetings</h3>
+              <span class="lo-badge bg-gradient-to-r from-emerald-500 to-emerald-600">LO7</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-sm"></i>
+                <span>Develop writing skills for meetings (minutes, structuring an agenda)</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-sm"></i>
+                <span>Write standard processes following instructions</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-sm"></i>
+                <span>Organize and conduct effective meetings</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO8 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-rose-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Emotional Intelligence</h3>
+              <span class="lo-badge bg-gradient-to-r from-rose-500 to-rose-600">LO8</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 mr-2 text-sm"></i>
+                <span>Introduction to emotional intelligence</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 mr-2 text-sm"></i>
+                <span>Self-awareness and self-management</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 mr-2 text-sm"></i>
+                <span>Social awareness and relationship management</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO9 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-indigo-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Personal Development Planning</h3>
+              <span class="lo-badge">LO9</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+                <span>Conduct SWOT analysis</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-2 text-sm"></i>
+                <span>Develop strategies for personal growth and career development</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO10 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-amber-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Professional Etiquette</h3>
+              <span class="lo-badge bg-gradient-to-r from-amber-500 to-amber-600">LO10</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Professional, telephone, and email etiquettes (netiquette)</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Identify professional jargon in telephone conversations</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Develop listening and speaking skills for workplace communication</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Construct effective professional conversations</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Understand professional responsibility and code of ethics</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 mr-2 text-sm"></i>
+                <span>Develop effective business writing and email correspondence skills</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO11 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-emerald-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Research Skills</h3>
+              <span class="lo-badge bg-gradient-to-r from-emerald-500 to-emerald-600">LO11</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-sm"></i>
+                <span>Identify the structure of a research paper</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-sm"></i>
+                <span>Demonstrate understanding of research concepts, design, and ethics</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-sm"></i>
+                <span>Review sample research papers and construct an abstract</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LO12 -->
+        <div class="relative timeline-item mb-12 animate__animated animate__fadeIn">
+          <div class="learning-objective-card p-6 border border-rose-100">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-slate-900">Dining and Grooming Etiquette</h3>
+              <span class="lo-badge bg-gradient-to-r from-rose-500 to-rose-600">LO12</span>
+            </div>
+            <ul class="text-slate-700 space-y-2">
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 mr-2 text-sm"></i>
+                <span>Display professional behavior in formal settings</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 mr-2 text-sm"></i>
+                <span>Critically discuss social decorum</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 mr-2 text-sm"></i>
+                <span>Dress appropriately in professional contexts</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Development Journey -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 mb-16">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Professional Skills Development Journey</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-2xl mb-4 shadow-lg mx-auto">
+            <i class="fa-solid fa-book-open text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Foundational Skills</h3>
+          <p class="text-slate-600">
+            Building core competencies in communication, professionalism, and workplace essentials (LO1-LO4)
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-700 rounded-2xl mb-4 shadow-lg mx-auto">
+            <i class="fa-solid fa-users text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Collaborative Skills</h3>
+          <p class="text-slate-600">
+            Developing leadership, teamwork, and interpersonal abilities (LO5-LO8)
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl mb-4 shadow-lg mx-auto">
+            <i class="fa-solid fa-chart-line text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Advanced Professionalism</h3>
+          <p class="text-slate-600">
+            Mastering research, etiquette, and personal development strategies (LO9-LO12)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <div class="max-w-6xl mx-auto mt-8 scroll-fade">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Learning Resources</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="./images/week1-1.jpeg" alt="Professional Skills Workshop" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <h3 class="font-bold text-white text-lg">Skills Workshop</h3>
+              <p class="text-indigo-200 text-sm">Interactive learning session</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="./images/week5 (2).jpeg" alt="Team Collaboration" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <h3 class="font-bold text-white text-lg">Team Collaboration</h3>
+              <p class="text-indigo-200 text-sm">Group project work</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="./images/week10 (2).jpeg" alt="Professional Development" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <h3 class="font-bold text-white text-lg">Development Plan</h3>
+              <p class="text-indigo-200 text-sm">Career progression strategy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <img src="abi.JPG" alt="Abishanan" class="rounded-full w-12 h-12 object-cover border-4 border-indigo-600 shadow-lg" />
+        <div>
+          <h2 class="text-white font-extrabold">Abishanan Pathmarajah</h2>
+          <p class="text-indigo-400 text-sm">Software Engineer | Full-Stack Developer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-5 text-2xl">
+        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400"><i class="fab fa-github"></i></a>
+        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Week X - Professional Skills - Abishanan Pathmarajah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- GSAP for advanced animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #f59e0b;
+      --accent: #10b981;
+      --dark: #0f172a;
+      --light: #f8fafc;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f4ff 0%, #fefaf0 50%, #f0fdf4 100%);
+      color: var(--dark);
+      scroll-behavior: smooth;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 300% 300%;
+      animation: gradientShift 6s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px -10px rgba(99, 102, 241, 0.3);
+      z-index: 10;
+    }
+
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Background orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: pulseOrb 6s ease-in-out infinite;
+    }
+
+    .bg-orb-indigo {
+      background: #6366f1;
+      width: 320px;
+      height: 320px;
+      top: 15vh;
+      left: 20vw;
+    }
+
+    .bg-orb-amber {
+      background: #f59e0b;
+      width: 400px;
+      height: 400px;
+      bottom: 15vh;
+      right: 20vw;
+      animation-delay: 2s;
+    }
+
+    @keyframes pulseOrb {
+      0%, 100% { opacity: .15; transform: translateY(0); }
+      50% { opacity: .25; transform: translateY(-25px); }
+    }
+
+    /* Animated Skill Bar */
+    .morph-skill-bar {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
+
+    .morph-skill-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Scroll Fade */
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(var(--primary), var(--secondary));
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-dark);
+    }
+
+    .section-divider {
+      border-top: 2px solid #e2e8f0;
+      margin: 2rem 0;
+    }
+
+    .tip-card {
+      background: linear-gradient(135deg, #f0f4ff, #fefaf0);
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .key-point {
+      border-left: 4px solid #f59e0b;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .note {
+      border-left: 4px solid #6366f1;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    /* Badge styling */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(to right, var(--primary), var(--primary-dark));
+      box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+    }
+
+    /* Timeline styling */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: attr(data-week);
+      position: absolute;
+      left: -45px;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px var(--primary);
+    }
+
+    /* Reduced Motion Fallback */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; }
+      .tech-orb, canvas { display: none !important; }
+    }
+
+    /* Fallback to ensure content visibility */
+    header, main, footer, .scroll-fade {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+    }
+    
+    /* Ensure all links are clickable */
+    a {
+      pointer-events: auto !important;
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gradient-to-b from-indigo-50 via-white to-amber-50 min-h-screen relative">
+  <!-- Animated Background Orbs -->
+  <div aria-hidden="true">
+    <div class="bg-orb bg-orb-indigo"></div>
+    <div class="bg-orb bg-orb-amber"></div>
+  </div>
+
+  <!-- ===== TOP NAVBAR (non-sticky) ===== -->
+  <header class="bg-white/90 backdrop-blur-md shadow-sm border-b border-indigo-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="./index.html" class="flex items-center gap-4">
+          <img src="./abi.JPG" alt="Abishanan Pathmarajah"
+               class="rounded-full w-12 h-12 object-cover border-4 border-indigo-300 shadow-lg" />
+          <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight select-none">
+            Abishanan <span class="text-indigo-600">Pathmarajah</span>
+          </h1>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="./esd_index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> Back to Skills
+        </a>
+        <a href="./index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-house mr-2"></i> Home
+        </a>
+        <a href="./resume/Abishanan_Pathmarajah_cv.pdf" download
+           class="inline-flex items-center h-11 px-5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500
+                  text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus:ring-4 focus:ring-indigo-400">
+          <i class="fas fa-download mr-2"></i> Download Résumé
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <nav class="mb-4 scroll-fade">
+      <ol class="flex items-center space-x-2 text-sm text-slate-600">
+        <li><a href="./index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li><a href="./esd_index.html" class="hover:text-indigo-600">ESD</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li class="text-indigo-600">Week X - [Week Title]</li>
+      </ol>
+    </nav>
+
+    <header class="text-center mb-8 scroll-fade">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl mb-4 shadow-lg floating card-hover" style="transform-style: preserve-3d;">
+        <i class="fa-solid fa-X text-2xl text-white" style="transform: translateZ(15px);"></i>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+        Week <span class="gradient-text">X</span>: [Week Title]
+      </h1>
+      <p class="text-slate-700 max-w-2xl mx-auto text-lg leading-relaxed px-4 py-3 bg-white/70 backdrop-blur-sm rounded-xl shadow-sm border border-indigo-100">
+        [Brief description of the week's focus]
+      </p>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-2xl shadow-lg p-6 mb-8 max-w-6xl mx-auto scroll-fade">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center">
+          <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mr-4">
+            <i class="fa-solid fa-X text-2xl text-white"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-1">Week X: [Week Title]</h2>
+            <p class="text-indigo-100">[Extended description of the week's focus]</p>
+          </div>
+        </div>
+        <div class="bg-white/10 rounded-lg px-4 py-2">
+          <span class="text-white font-semibold">[Category]</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-6xl mx-auto scroll-fade">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">1. Lesson Overview</h2>
+      <p class="text-slate-700 mb-4 leading-relaxed">
+        [Detailed overview of the lesson content and objectives]
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">2. Learning Objectives</h2>
+      <p class="text-slate-700 mb-4">
+        By the end of this lesson, you should be able to:
+      </p>
+      
+      <ul class="space-y-3 mb-6">
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">[Objective 1]</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">[Objective 2]</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">[Objective 3]</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">[Objective 4]</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">[Objective 5]</span>
+        </li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">3. Core Concepts</h2>
+      <p class="text-slate-700 mb-4">
+        [Explanation of the core concepts covered in this week]
+      </p>
+
+      <div class="bg-gradient-to-r from-indigo-50 to-amber-50 rounded-xl p-5 my-6 border-l-4 border-indigo-500">
+        <h3 class="font-bold text-indigo-800 mb-2"><i class="fa-solid fa-lightbulb mr-2"></i>Key Insight</h3>
+        <p class="text-indigo-700">
+          [Important insight or takeaway from this week's concepts]
+        </p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">4. Practical Applications</h2>
+      <p class="text-slate-700 mb-4">
+        [How these skills can be applied in real-world scenarios]
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+        <div class="bg-gradient-to-br from-white to-indigo-50 rounded-xl p-5 border border-indigo-100 shadow-sm">
+          <h3 class="font-bold text-indigo-800 mb-2"><i class="fa-solid fa-briefcase mr-2"></i>Professional Context</h3>
+          <p class="text-slate-700 text-sm">
+            [Application in workplace settings]
+          </p>
+        </div>
+        <div class="bg-gradient-to-br from-white to-amber-50 rounded-xl p-5 border border-amber-100 shadow-sm">
+          <h3 class="font-bold text-amber-800 mb-2"><i class="fa-solid fa-graduation-cap mr-2"></i>Academic Context</h3>
+          <p class="text-slate-700 text-sm">
+            [Application in educational settings]
+          </p>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">5. Skill Development Progress</h2>
+      <p class="text-slate-700 mb-4">
+        This week contributes to your overall professional skill development:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="font-semibold text-slate-700">[Skill 1]</span>
+            <span class="text-slate-500">[Percentage]%</span>
+          </div>
+          <div class="morph-skill-bar">
+            <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="font-semibold text-slate-700">[Skill 2]</span>
+            <span class="text-slate-500">[Percentage]%</span>
+          </div>
+          <div class="morph-skill-bar">
+            <div class="morph-skill-fill" data-pct="85" style="width: 85%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">6. Interactive Activities</h2>
+      <p class="text-slate-700 mb-4">
+        Engage with these activities to reinforce your learning:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-4 border border-indigo-200">
+          <div class="text-indigo-600 text-2xl mb-2">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1">Discussion Forum</h3>
+          <p class="text-slate-700 text-sm">
+            [Activity description]
+          </p>
+        </div>
+        <div class="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-4 border border-amber-200">
+          <div class="text-amber-600 text-2xl mb-2">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1">Reflection Journal</h3>
+          <p class="text-slate-700 text-sm">
+            [Activity description]
+          </p>
+        </div>
+        <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl p-4 border border-emerald-200">
+          <div class="text-emerald-600 text-2xl mb-2">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1">Group Exercise</h3>
+          <p class="text-slate-700 text-sm">
+            [Activity description]
+          </p>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">7. Assessment Overview</h2>
+      <p class="text-slate-700 mb-4">
+        This week's learning will be assessed through:
+      </p>
+
+      <div class="flex flex-wrap gap-3 mb-6">
+        <span class="inline-flex items-center px-3 py-1 bg-gradient-to-r from-indigo-100 to-indigo-200 text-indigo-800 rounded-full text-sm font-semibold">
+          <i class="fas fa-file-lines mr-2"></i>Written Assignment
+        </span>
+        <span class="inline-flex items-center px-3 py-1 bg-gradient-to-r from-amber-100 to-amber-200 text-amber-800 rounded-full text-sm font-semibold">
+          <i class="fas fa-users mr-2"></i>Peer Review
+        </span>
+        <span class="inline-flex items-center px-3 py-1 bg-gradient-to-r from-emerald-100 to-emerald-200 text-emerald-800 rounded-full text-sm font-semibold">
+          <i class="fas fa-presentation mr-2"></i>Presentation
+        </span>
+        <span class="inline-flex items-center px-3 py-1 bg-gradient-to-r from-rose-100 to-rose-200 text-rose-800 rounded-full text-sm font-semibold">
+          <i class="fas fa-clipboard-question mr-2"></i>Quiz
+        </span>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">8. Resources & References</h2>
+      <p class="text-slate-700 mb-4">
+        Enhance your learning with these additional resources:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="flex items-start p-3 bg-gradient-to-r from-indigo-50 to-white rounded-lg border border-indigo-100">
+          <i class="fa-solid fa-book text-indigo-600 mt-1 mr-3"></i>
+          <div>
+            <h3 class="font-semibold text-slate-900">[Resource Title]</h3>
+            <p class="text-slate-600 text-sm">[Resource description]</p>
+          </div>
+        </div>
+        <div class="flex items-start p-3 bg-gradient-to-r from-amber-50 to-white rounded-lg border border-amber-100">
+          <i class="fa-solid fa-video text-amber-600 mt-1 mr-3"></i>
+          <div>
+            <h3 class="font-semibold text-slate-900">[Resource Title]</h3>
+            <p class="text-slate-600 text-sm">[Resource description]</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">9. My Learning Reflection</h2>
+      
+      <p class="text-slate-700 mb-4">
+        [Personal reflection on the week's learning experience]
+      </p>
+      
+      <div class="bg-gradient-to-r from-amber-50 to-indigo-50 rounded-xl p-5 mt-4 border-l-4 border-amber-500">
+        <h3 class="font-bold text-amber-800 mb-2"><i class="fa-solid fa-user mr-2"></i>Personal Statement</h3>
+        <p class="text-amber-700">
+          [Personal commitment and future application of the skills learned]
+        </p>
+      </div>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <div class="max-w-6xl mx-auto mt-8 scroll-fade">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Learning Resources</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+          <img src="images/weekX/image1.jpeg" alt="Learning Activity 1" class="w-full h-40 object-cover">
+          <div class="p-3">
+            <h3 class="font-semibold text-slate-900 text-sm">[Activity Title]</h3>
+            <p class="text-slate-600 text-xs mt-1">[Activity Description]</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+          <img src="images/weekX/image2.jpeg" alt="Learning Activity 2" class="w-full h-40 object-cover">
+          <div class="p-3">
+            <h3 class="font-semibold text-slate-900 text-sm">[Activity Title]</h3>
+            <p class="text-slate-600 text-xs mt-1">[Activity Description]</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+          <img src="images/weekX/image3.jpeg" alt="Learning Activity 3" class="w-full h-40 object-cover">
+          <div class="p-3">
+            <h3 class="font-semibold text-slate-900 text-sm">[Activity Title]</h3>
+            <p class="text-slate-600 text-xs mt-1">[Activity Description]</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+          <img src="images/weekX/image4.jpeg" alt="Learning Activity 4" class="w-full h-40 object-cover">
+          <div class="p-3">
+            <h3 class="font-semibold text-slate-900 text-sm">[Activity Title]</h3>
+            <p class="text-slate-600 text-xs mt-1">[Activity Description]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="./abi.JPG" alt="Abishanan" class="rounded-full w-10 h-10 object-cover border-2 border-indigo-600 shadow-md" />
+        <div>
+          <h2 class="text-white font-extrabold">Abishanan Pathmarajah</h2>
+          <p class="text-indigo-400 text-sm">Software Engineer | Full-Stack Developer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-lg">
+        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400 transition"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400 transition"><i class="fab fa-github"></i></a>
+        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400 transition"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Enhanced scroll animations with more technical effects
+    function createScrollAnimations() {
+      // Animate main containers with staggered effects
+      const mainContainers = document.querySelectorAll('header, .bg-white, .mt-8, footer');
+      mainContainers.forEach((container, i) => {
+        const elements = container.querySelectorAll('.scroll-fade, .card-hover');
+        
+        // Container entrance animation
+        gsap.fromTo(container,
+          { opacity: 0, y: 100, scale: 0.95 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: container,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+        
+        // Staggered element animations within containers
+        if (elements.length) {
+          gsap.fromTo(elements,
+            { opacity: 0, y: 30, rotationX: -15 },
+            {
+              opacity: 1,
+              y: 0,
+              rotationX: 0,
+              duration: 0.8,
+              stagger: 0.1,
+              ease: "back.out(1.7)",
+              scrollTrigger: {
+                trigger: container,
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+              }
+            }
+          );
+        }
+      });
+      
+      // Skill bars animation
+      gsap.utils.toArray('.morph-skill-fill').forEach(bar => {
+        const pct = bar.getAttribute('data-pct');
+        gsap.fromTo(bar,
+          { width: 0 },
+          {
+            width: pct + '%',
+            duration: 1.5,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: bar,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+      
+      // Project cards with 3D effect
+      gsap.utils.toArray('.card-hover').forEach(card => {
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top 90%",
+          end: "bottom 10%",
+          toggleActions: "play none none reverse",
+          onEnter: () => {
+            gsap.to(card, {
+              duration: 0.6,
+              rotationY: 0,
+              rotationX: 0,
+              opacity: 1,
+              y: 0,
+              ease: "power3.out"
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(card, {
+              duration: 0.6,
+              rotationY: 10,
+              rotationX: 5,
+              opacity: 0,
+              y: 50,
+              ease: "power3.in"
+            });
+          }
+        });
+      });
+    }
+    
+    // Function to animate skill bars
+    function animateSkillBars() {
+      const skillBars = document.querySelectorAll('.morph-skill-fill');
+      skillBars.forEach(bar => {
+        const pct = bar.getAttribute('data-pct');
+        // Reset width to 0 for animation
+        bar.style.width = '0%';
+        // Trigger reflow
+        void bar.offsetWidth;
+        // Animate to target width
+        bar.style.width = pct + '%';
+      });
+    }
+    
+    // Initialize animations when page loads
+    window.addEventListener('load', () => {
+      try {
+        // Ensure scroll-fade elements are visible on load
+        const scrollFadeElements = document.querySelectorAll('.scroll-fade');
+        scrollFadeElements.forEach(el => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        });
+        
+        setTimeout(createScrollAnimations, 300);
+        // Animate skill bars on load
+        setTimeout(animateSkillBars, 500);
+      } catch (error) {
+        console.error('Animation initialization error:', error);
+        // Fallback: ensure all elements are visible
+        document.querySelectorAll('*').forEach(el => {
+          el.style.visibility = 'visible';
+          el.style.opacity = '1';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

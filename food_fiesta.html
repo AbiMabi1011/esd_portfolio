@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Food Fiesta - Personal Skills - Abishanan Pathmarajah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #f59e0b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      scroll-behavior: smooth;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 25px 35px -5px rgba(99, 102, 241, 0.25), 0 15px 15px -5px rgba(99, 102, 241, 0.15);
+      z-index: 10;
+    }
+
+    /* Background orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: pulseOrb 6s ease-in-out infinite;
+    }
+
+    .bg-orb-indigo {
+      background: #6366f1;
+      width: 320px;
+      height: 320px;
+      top: 15vh;
+      left: 20vw;
+    }
+
+    .bg-orb-amber {
+      background: #f59e0b;
+      width: 400px;
+      height: 400px;
+      bottom: 15vh;
+      right: 20vw;
+      animation-delay: 2s;
+    }
+
+    @keyframes pulseOrb {
+
+      0%,
+      100% {
+        opacity: .15;
+        transform: translateY(0)
+      }
+
+      50% {
+        opacity: .25;
+        transform: translateY(-20px)
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gradient-to-b from-indigo-50 via-white to-amber-50 min-h-screen relative">
+  <!-- Animated Background Orbs -->
+  <div aria-hidden="true">
+    <div class="bg-orb bg-orb-indigo"></div>
+    <div class="bg-orb bg-orb-amber"></div>
+  </div>
+
+  <!-- ===== TOP NAVBAR (non-sticky) ===== -->
+  <header class="bg-white/90 backdrop-blur-md shadow-sm border-b border-indigo-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-4">
+          <img src="abi.JPG" alt="Abishanan Pathmarajah"
+               class="rounded-full w-12 h-12 object-cover border-4 border-indigo-300 shadow-lg" />
+          <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight select-none">
+            Abishanan <span class="text-indigo-600">Pathmarajah</span>
+          </h1>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="esd_index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> Back to Skills
+        </a>
+        <a href="index.html"
+           class="hidden sm:inline-flex items-center h-11 px-4 rounded-full border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition">
+          <i class="fa-solid fa-house mr-2"></i> Home
+        </a>
+        <a href="resume/Abishanan_Pathmarajah_Resume.pdf" download
+           class="inline-flex items-center h-11 px-5 rounded-full bg-gradient-to-r from-indigo-600 to-indigo-500
+                  text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus:ring-4 focus:ring-indigo-400">
+          <i class="fas fa-download mr-2"></i> Download Résumé
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <nav class="mb-8">
+      <ol class="flex items-center space-x-2 text-sm text-slate-600">
+        <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li><a href="esd_index.html" class="hover:text-indigo-600">ESD</a></li>
+        <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
+        <li class="text-indigo-600">Food Fiesta</li>
+      </ol>
+    </nav>
+
+    <header class="text-center mb-16">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-amber-100 rounded-full mb-6">
+        <i class="fa-solid fa-utensils text-3xl text-amber-600"></i>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+        <span class="gradient-text">Food Fiesta</span>
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto text-lg">
+        Culinary exploration and food project development
+      </p>
+    </header>
+
+    <div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">Overview</h2>
+      <p class="text-slate-700 mb-6 leading-relaxed">
+        The Food Fiesta project explored culinary arts as a unique skill development opportunity. 
+        This project emphasized creativity, cultural appreciation, and the intersection of technical 
+        precision with artistic expression in cooking.
+      </p>
+      
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Key Learning Objectives</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <li class="flex items-start">
+          <i class="fa-solid fa-check-circle text-amber-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">Developing culinary techniques and presentation skills</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-check-circle text-amber-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">Exploring cultural diversity through food</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-check-circle text-amber-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">Building creativity and artistic expression abilities</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-check-circle text-amber-500 mt-1 mr-3"></i>
+          <span class="text-slate-700">Enhancing precision and attention to detail</span>
+        </li>
+      </ul>
+      
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Activities Completed</h2>
+      <div class="space-y-4">
+        <div class="border-l-4 border-amber-500 pl-4 py-1">
+          <h3 class="font-semibold text-slate-900">Culinary Techniques Workshop</h3>
+          <p class="text-slate-600">Learned fundamental cooking methods and advanced presentation techniques.</p>
+        </div>
+        <div class="border-l-4 border-amber-500 pl-4 py-1">
+          <h3 class="font-semibold text-slate-900">Cultural Cuisine Exploration</h3>
+          <p class="text-slate-600">Studied traditional dishes from various cultures and their significance.</p>
+        </div>
+        <div class="border-l-4 border-amber-500 pl-4 py-1">
+          <h3 class="font-semibold text-slate-900">Creative Recipe Development</h3>
+          <p class="text-slate-600">Designed original dishes combining different culinary traditions.</p>
+        </div>
+        <div class="border-l-4 border-amber-500 pl-4 py-1">
+          <h3 class="font-semibold text-slate-900">Food Presentation Challenge</h3>
+          <p class="text-slate-600">Enhanced abilities to create visually appealing and Instagram-worthy dishes.</p>
+        </div>
+      </div>
+      
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Culinary Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div class="border border-amber-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 text-lg mb-3">International Cuisines</h3>
+          <p class="text-slate-700 mb-3">Mastered techniques from Italian, Japanese, Mexican, and Mediterranean traditions.</p>
+          <div class="flex items-center text-sm text-amber-600">
+            <i class="fa-solid fa-globe mr-2"></i>
+            <span>Created 25+ authentic dishes</span>
+          </div>
+        </div>
+        <div class="border border-amber-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 text-lg mb-3">Pastry Arts</h3>
+          <p class="text-slate-700 mb-3">Developed skills in baking, decorating, and creating精致 desserts.</p>
+          <div class="flex items-center text-sm text-amber-600">
+            <i class="fa-solid fa-cake mr-2"></i>
+            <span>Mastered 15+ pastry techniques</span>
+          </div>
+        </div>
+      </div>
+      
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 mt-10">Reflections</h2>
+      <p class="text-slate-700 mb-6 leading-relaxed">
+        The Food Fiesta project was a delightful departure from traditional technical skills, 
+        showing how creativity and precision intersect in unexpected ways. Learning about 
+        different cultures through their cuisines was both educational and inspiring. The 
+        precision required in cooking - from timing to measurements - paralleled the attention 
+        to detail needed in software development. Creating visually appealing dishes also 
+        enhanced my design sensibilities, which translate well to user interface work.
+      </p>
+      
+      <div class="bg-amber-50 rounded-xl p-6 mt-8">
+        <h3 class="font-bold text-amber-800 text-lg mb-3">Key Takeaway</h3>
+        <p class="text-amber-700">
+          <i class="fa-solid fa-quote-left mr-2"></i>
+          Skills development doesn't have to be confined to professional domains. Exploring 
+          creative outlets like cooking enhances problem-solving abilities, attention to detail, 
+          and cultural awareness - all valuable in any career. The joy and satisfaction from 
+          creating something delicious and beautiful is a wonderful complement to technical work.
+          <i class="fa-solid fa-quote-right ml-2"></i>
+        </p>
+      </div>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <div class="max-w-6xl mx-auto mt-8 scroll-fade">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Culinary Journey</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="./images/week5 (1).jpeg" alt="Culinary Workshop" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <h3 class="font-bold text-white text-lg">Culinary Workshop</h3>
+              <p class="text-indigo-200 text-sm">Hands-on learning session</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="./images/week5 (2).jpeg" alt="Food Presentation" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <h3 class="font-bold text-white text-lg">Food Presentation</h3>
+              <p class="text-indigo-200 text-sm">Artistic plating techniques</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transform transition-all duration-300 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="./images/week5 (3).jpeg" alt="Cultural Cuisine" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3">
+              <h3 class="font-bold text-white text-lg">Cultural Cuisine</h3>
+              <p class="text-indigo-200 text-sm">International flavors</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <img src="abi.JPG" alt="Abishanan" class="rounded-full w-12 h-12 object-cover border-4 border-indigo-600 shadow-lg" />
+        <div>
+          <h2 class="text-white font-extrabold">Abishanan Pathmarajah</h2>
+          <p class="text-indigo-400 text-sm">Software Engineer | Full-Stack Developer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-5 text-2xl">
+        <a href="https://linkedin.com/in/abishananpathmarajah" target="_blank" class="hover:text-indigo-400"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/abimabi1011" target="_blank" class="hover:text-indigo-400"><i class="fab fa-github"></i></a>
+        <a href="mailto:abishanan123@gmail.com" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
