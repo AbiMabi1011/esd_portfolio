@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Week 1: Employability Skills Development - Abishanan Pathmarajah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 800;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+      margin: 1.5rem 0;
+    }
+
+    .skill-meter {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 8px 0;
+    }
+
+    .skill-level {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      .text-3xl {
+        font-size: 1.875rem;
+      }
+      
+      .text-2xl {
+        font-size: 1.5rem;
+      }
+      
+      .p-6 {
+        padding: 1rem;
+      }
+      
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      .py-12 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+      
+      h2 {
+        font-size: 1.25rem;
+      }
+      
+      .table-wrapper {
+        overflow-x: auto;
+      }
+    }
+
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-indigo-50 min-h-screen">
+  <main class="max-w-3xl mx-auto px-4 py-8">
+    <header class="text-center mb-6">
+      <div class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-lg mb-3 shadow-md">
+        <i class="fa-solid fa-1 text-lg text-white"></i>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+        Week <span class="gradient-text">1</span>: Employability Skills Development
+      </h1>
+      <p class="text-slate-700 text-base leading-relaxed px-3 py-2 bg-white/70 backdrop-blur-sm rounded-lg shadow-sm border border-indigo-100">
+        🗓 July 19, 2025 | Instructor: Ms. Vaishali
+      </p>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-xl shadow-md p-4 mb-6">
+      <div class="flex flex-col items-center text-center gap-3">
+        <div class="flex items-center">
+          <div class="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mr-3">
+            <i class="fa-solid fa-1 text-lg text-white"></i>
+          </div>
+          <div>
+            <h2 class="text-lg font-bold text-white mb-1">🎯 Session Focus</h2>
+            <p class="text-indigo-100 text-sm">Understanding what employability means and how a balance of technical, soft, and personal skills shapes career success</p>
+          </div>
+        </div>
+        <div class="bg-white/10 rounded-md px-3 py-1">
+          <span class="text-white font-semibold text-sm">Foundational Skills</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="text-xl font-bold text-slate-900 mb-3">🧠 Core Learning Areas</h2>
+      
+      <div class="space-y-4 mb-6">
+        <div class="border-l-4 border-indigo-500 pl-3 py-2">
+          <h3 class="font-bold text-base text-slate-900">1. Soft Skills for Career Success</h3>
+          <p class="text-slate-700 text-sm mt-1">We explored how communication, teamwork, adaptability, and problem-solving form the foundation of employability.</p>
+        </div>
+        
+        <div class="border-l-4 border-amber-500 pl-3 py-2">
+          <h3 class="font-bold text-base text-slate-900">2. Technical Skills in the Workplace</h3>
+          <p class="text-slate-700 text-sm mt-1">The discussion highlighted the need to maintain technical competence through continuous learning.</p>
+        </div>
+        
+        <div class="border-l-4 border-emerald-500 pl-3 py-2">
+          <h3 class="font-bold text-base text-slate-900">3. Values, Beliefs & Attitudes</h3>
+          <p class="text-slate-700 text-sm mt-1">We learned that professionalism begins with self-awareness and understanding how our personal values influence workplace ethics.</p>
+        </div>
+        
+        <div class="border-l-4 border-rose-500 pl-3 py-2">
+          <h3 class="font-bold text-base text-slate-900">4. Transferable Skills</h3>
+          <p class="text-slate-700 text-sm mt-1">The concept of transferable skills was introduced — abilities like critical thinking and time management.</p>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">💡 Key Insights Gained</h2>
+      <ul class="space-y-2 mb-5">
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Strong soft skills complement technical knowledge and are essential for employability.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Adaptability and attitude determine long-term career growth more than just qualifications.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Recognizing transferable skills helps expand career opportunities beyond specific job titles.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Success depends on aligning personal strengths with employer expectations.</span>
+        </li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">🧩 Activities & Discussion Highlights</h2>
+      <ul class="space-y-2 mb-5">
+        <li class="flex items-start">
+          <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">A short reflection task where I identified my top five personal skills and areas to improve.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Group discussion on how values and behaviors influence professional reputation.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Real-world examples showing how companies assess employability.</span>
+        </li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">📘 Personal Reflection</h2>
+      <p class="text-slate-700 text-sm mb-4 leading-relaxed">
+        This session made me realize that employability goes beyond getting a job — it's about being career-ready. It's the ability to adapt, learn, and contribute effectively in any environment. I also understood how important it is to match my personal goals and behavior with workplace culture.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">🚀 Future Application</h2>
+      <p class="text-slate-700 text-sm mb-3">I plan to:</p>
+      <ul class="space-y-2 mb-5">
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Improve my communication and teamwork through active participation in group tasks.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Focus on upskilling in industry-relevant tools to strengthen my technical profile.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fa-solid fa-arrow-right text-indigo-500 mt-1 mr-2 text-xs"></i>
+          <span class="text-slate-700 text-sm">Continue reflecting on my attitudes and professional conduct to maintain a positive image.</span>
+        </li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <h2 class="text-xl font-bold text-slate-900 mb-3">🧭 Skill Development Summary</h2>
+      <div class="table-wrapper mb-5">
+        <table class="min-w-full divide-y divide-slate-200 text-xs">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="px-3 py-2 text-left font-medium text-slate-700 uppercase tracking-wider">Skill Area</th>
+              <th class="px-3 py-2 text-left font-medium text-slate-700 uppercase tracking-wider">Level</th>
+              <th class="px-3 py-2 text-left font-medium text-slate-700 uppercase tracking-wider">Focus</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-slate-200">
+            <tr>
+              <td class="px-3 py-2 font-semibold text-slate-900">Communication</td>
+              <td class="px-3 py-2">
+                <div class="skill-meter">
+                  <div class="skill-level bg-indigo-500" style="width: 60%"></div>
+                </div>
+              </td>
+              <td class="px-3 py-2 text-slate-700">Expressing ideas clearly</td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="px-3 py-2 font-semibold text-slate-900">Teamwork</td>
+              <td class="px-3 py-2">
+                <div class="skill-meter">
+                  <div class="skill-level bg-indigo-500" style="width: 70%"></div>
+                </div>
+              </td>
+              <td class="px-3 py-2 text-slate-700">Collaborating effectively</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-semibold text-slate-900">Problem-Solving</td>
+              <td class="px-3 py-2">
+                <div class="skill-meter">
+                  <div class="skill-level bg-indigo-500" style="width: 65%"></div>
+                </div>
+              </td>
+              <td class="px-3 py-2 text-slate-700">Logical thinking</td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="px-3 py-2 font-semibold text-slate-900">Adaptability</td>
+              <td class="px-3 py-2">
+                <div class="skill-meter">
+                  <div class="skill-level bg-indigo-500" style="width: 55%"></div>
+                </div>
+              </td>
+              <td class="px-3 py-2 text-slate-700">Handling change</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-semibold text-slate-900">Professional Attitude</td>
+              <td class="px-3 py-2">
+                <div class="skill-meter">
+                  <div class="skill-level bg-indigo-500" style="width: 75%"></div>
+                </div>
+              </td>
+              <td class="px-3 py-2 text-slate-700">Maintaining ethics</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-gradient-to-r from-indigo-50 to-amber-50 rounded-lg p-4 my-4 border-l-4 border-indigo-500">
+        <h3 class="font-bold text-indigo-800 mb-1"><i class="fa-solid fa-seedling mr-1"></i>🌱 Session Essence</h3>
+        <p class="text-indigo-700 italic font-medium text-sm">
+          "Employability is not just about getting hired — it's about becoming valuable."
+        </p>
+        <p class="text-indigo-700 mt-2 text-sm">
+          This session helped me see my education as a foundation, but my skills, mindset, and attitude as the bridge to professional success.
+        </p>
+      </div>
+
+      <div class="flex justify-between items-center mt-6 pt-4 border-t border-slate-200">
+        <a href="./esd_index.html" class="inline-flex items-center px-3 py-2 bg-slate-100 text-slate-700 rounded-md text-sm font-semibold hover:bg-slate-200 transition">
+          <i class="fas fa-arrow-left mr-1"></i> Back
+        </a>
+        <a href="./session2.html" class="inline-flex items-center px-3 py-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-md text-sm font-semibold hover:shadow-md transition">
+          Next <i class="fas fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-white py-6 mt-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-center sm:text-left">
+          <h3 class="text-base font-bold">Abishanan Pathmarajah</h3>
+          <p class="text-slate-400 text-sm">Software Engineering Student | SLIIT</p>
+        </div>
+        <div class="flex items-center gap-3 text-sm">
+          <a href="./esd_index.html" class="text-slate-400 hover:text-white transition">Timeline</a>
+          <a href="mailto:abishanan.pathmarajah@gmail.com" class="text-slate-400 hover:text-white transition">Contact</a>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 mt-4 pt-4 text-center text-slate-500 text-xs">
+        <p>&copy; 2025 Abishanan Pathmarajah. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

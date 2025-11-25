@@ -50,6 +50,46 @@
       height: 100%;
       border-radius: 5px;
     }
+
+    /* Sticky buttons */
+    .sticky-buttons {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .sticky-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      color: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .sticky-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      color: #7c3aed;
+    }
+
+    .sticky-button.module-btn {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+    }
+
+    .sticky-button.module-btn:hover {
+      color: white;
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-slate-50 to-indigo-50 min-h-screen">
@@ -155,6 +195,21 @@
 
       <div class="section-divider"></div>
 
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">🖼️ Session Images</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="images/week7 (1).jpeg" alt="Week 7 Session" class="w-full h-auto object-cover">
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="images/week7 (2).jpeg" alt="Week 7 Activities" class="w-full h-auto object-cover">
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="images/week7 (3).jpeg" alt="Week 7 Discussion" class="w-full h-auto object-cover">
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
       <h2 class="text-2xl font-bold text-slate-900 mb-4">📘 Topic Summary</h2>
       <p class="text-slate-700 mb-4 leading-relaxed">
         This session bridged the gap between classroom learning and real-world professional application. It shed light on how fresh graduates can identify their strengths, position themselves effectively for IT careers, and continuously evolve to stay competitive in the global market.
@@ -236,9 +291,7 @@
         <a href="./session6.html" class="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-lg font-semibold hover:bg-slate-200 transition">
           <i class="fas fa-arrow-left mr-2"></i> Previous Session: Week 6 – Stress-Free Work Techniques
         </a>
-        <a href="./session8.html" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-lg font-semibold hover:shadow-lg transition">
-          Next Session <i class="fas fa-arrow-right ml-2"></i>
-        </a>
+        <div></div>
       </div>
     </div>
   </main>
@@ -277,5 +330,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- Sticky Navigation Buttons -->
+  <div class="sticky-buttons">
+    <a href="./index.html" class="sticky-button" title="Home">
+      <i class="fas fa-home"></i>
+    </a>
+    <a href="./esd_index.html" class="sticky-button module-btn" title="Module Overview">
+      <i class="fas fa-graduation-cap"></i>
+    </a>
+  </div>
 </body>
 </html>
